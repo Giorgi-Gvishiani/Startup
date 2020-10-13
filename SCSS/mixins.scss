@@ -1,0 +1,78 @@
+@mixin Button {
+    font-family: $Roboto;
+    color: $white;
+    font-size: 16px;
+    font-weight: bold;
+    background: inherit;
+    padding: 15px 27px;
+    border: 3px solid $white;
+    border-radius: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all .1s linear;
+
+    &:hover {
+        background: $white;
+        color: $mainColor;
+    }
+}
+
+@mixin Nav {
+    display: flex;
+    justify-content: space-between;
+    font-family: $Montserrat;
+
+    &__link {
+        color: $white;
+        padding: 7px;
+        font-weight: 500;
+        font-size: 16px;
+        text-decoration: none;
+        border-bottom: 4px solid transparent;
+        transition: $transition;
+
+
+        &:hover {
+            border-bottom: 4px solid $white;
+        }
+
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+}
+
+
+@mixin pagePaddings {
+    padding-top: 95px;
+    padding-bottom: 105px;
+}
+
+@mixin mainColorRGBA($opacity) {
+    background-color: rgba(192, 48, 28, $opacity);
+}
+
+@mixin pageHeader {
+    font-family: $Montserrat;
+    display: block;
+    text-align: center;
+    padding-bottom: 70px;
+
+    &__title {
+        font-size: 20px;
+        text-transform: uppercase;
+
+    }
+
+    &__subtitle {
+        font-size: 16px;
+        font-family: $Roboto;
+    }
+}
+
+@mixin pageText {
+    font-family: $Roboto;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.7;
+}

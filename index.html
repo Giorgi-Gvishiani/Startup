@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;400;500;600;700&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="SCSS/main.css">
+    <title>Startup</title>
+</head>
+
+<body>
+
+<!-- SVG -->
+
+<svg display="none"
+     xmlns="http://www.w3.org/2000/svg">
+    <symbol id="facebook" viewBox="0 0 512 512">
+        <g>
+            <path d="M288,176v-64c0-17.664,14.336-32,32-32h32V0h-64c-53.024,0-96,42.976-96,96v80h-64v80h64v256h96V256h64l32-80H288z"/>
+        </g>
+    </symbol>
+
+    <symbol id="twitter" viewBox="0 0 512 512">
+        <g>
+            <path d="M512,97.248c-19.04,8.352-39.328,13.888-60.48,16.576c21.76-12.992,38.368-33.408,46.176-58.016
+			c-20.288,12.096-42.688,20.64-66.56,25.408C411.872,60.704,384.416,48,354.464,48c-58.112,0-104.896,47.168-104.896,104.992
+			c0,8.32,0.704,16.32,2.432,23.936c-87.264-4.256-164.48-46.08-216.352-109.792c-9.056,15.712-14.368,33.696-14.368,53.056
+			c0,36.352,18.72,68.576,46.624,87.232c-16.864-0.32-33.408-5.216-47.424-12.928c0,0.32,0,0.736,0,1.152
+			c0,51.008,36.384,93.376,84.096,103.136c-8.544,2.336-17.856,3.456-27.52,3.456c-6.72,0-13.504-0.384-19.872-1.792
+			c13.6,41.568,52.192,72.128,98.08,73.12c-35.712,27.936-81.056,44.768-130.144,44.768c-8.608,0-16.864-0.384-25.12-1.44
+			C46.496,446.88,101.6,464,161.024,464c193.152,0,298.752-160,298.752-298.688c0-4.64-0.16-9.12-0.384-13.568
+			C480.224,136.96,497.728,118.496,512,97.248z"/>
+        </g>
+    </symbol>
+
+    <symbol id="linkedin" viewBox="-21 -35 682.66669 682">
+        <g>
+            <path d="m77.613281-.667969c-46.929687 0-77.613281 30.816407-77.613281 71.320313 0 39.609375 29.769531 71.304687 75.8125 71.304687h.890625c47.847656 0 77.625-31.695312 77.625-71.304687-.894531-40.503906-29.777344-71.320313-76.714844-71.320313zm0 0"/>
+            <path d="m8.109375 198.3125h137.195313v412.757812h-137.195313zm0 0"/>
+            <path d="m482.054688 188.625c-74.011719 0-123.640626 69.546875-123.640626 69.546875v-59.859375h-137.199218v412.757812h137.191406v-230.5c0-12.339843.894531-24.660156 4.519531-33.484374 9.917969-24.640626 32.488281-50.167969 70.390625-50.167969 49.644532 0 69.5 37.851562 69.5 93.339843v220.8125h137.183594v-236.667968c0-126.78125-67.6875-185.777344-157.945312-185.777344zm0 0"/>
+        </g>
+    </symbol>
+
+    <symbol id="googlePlus" viewBox="0 0 96.828 96.827">
+        <path d="M62.617,0H39.525c-10.29,0-17.413,2.256-23.824,7.552c-5.042,4.35-8.051,10.672-8.051,16.912
+			c0,9.614,7.33,19.831,20.913,19.831c1.306,0,2.752-0.134,4.028-0.253l-0.188,0.457c-0.546,1.308-1.063,2.542-1.063,4.468
+			c0,3.75,1.809,6.063,3.558,8.298l0.22,0.283l-0.391,0.027c-5.609,0.384-16.049,1.1-23.675,5.787
+			c-9.007,5.355-9.707,13.145-9.707,15.404c0,8.988,8.376,18.06,27.09,18.06c21.76,0,33.146-12.005,33.146-23.863
+			c0.002-8.771-5.141-13.101-10.6-17.698l-4.605-3.582c-1.423-1.179-3.195-2.646-3.195-5.364c0-2.672,1.772-4.436,3.336-5.992
+			l0.163-0.165c4.973-3.917,10.609-8.358,10.609-17.964c0-9.658-6.035-14.649-8.937-17.048h7.663c0.094,0,0.188-0.026,0.266-0.077
+			l6.601-4.15c0.188-0.119,0.276-0.348,0.214-0.562C63.037,0.147,62.839,0,62.617,0z M34.614,91.535
+			c-13.264,0-22.176-6.195-22.176-15.416c0-6.021,3.645-10.396,10.824-12.997c5.749-1.935,13.17-2.031,13.244-2.031
+			c1.257,0,1.889,0,2.893,0.126c9.281,6.605,13.743,10.073,13.743,16.678C53.141,86.309,46.041,91.535,34.614,91.535z
+			 M34.489,40.756c-11.132,0-15.752-14.633-15.752-22.468c0-3.984,0.906-7.042,2.77-9.351c2.023-2.531,5.487-4.166,8.825-4.166
+			c10.221,0,15.873,13.738,15.873,23.233c0,1.498,0,6.055-3.148,9.22C40.94,39.337,37.497,40.756,34.489,40.756z"/>
+        <path d="M94.982,45.223H82.814V33.098c0-0.276-0.225-0.5-0.5-0.5H77.08c-0.276,0-0.5,0.224-0.5,0.5v12.125H64.473
+			c-0.276,0-0.5,0.224-0.5,0.5v5.304c0,0.275,0.224,0.5,0.5,0.5H76.58V63.73c0,0.275,0.224,0.5,0.5,0.5h5.234
+			c0.275,0,0.5-0.225,0.5-0.5V51.525h12.168c0.276,0,0.5-0.223,0.5-0.5v-5.302C95.482,45.446,95.259,45.223,94.982,45.223z"/>
+    </symbol>
+</svg>
+
+<!-- HEADER -->
+
+<header class="header">
+    <div class="main__container">
+        <div class="header__inner">
+            <a href="#" class="header__icon">Startup</a>
+            <nav class="nav">
+                <a href="#" class="nav__link">Home</a>
+                <a href="#" class="nav__link">Services</a>
+                <a href="#" class="nav__link">About</a>
+                <a href="#" class="nav__link">Works </a>
+                <a href="#" class="nav__link">Blog</a>
+                <a href="#" class="nav__link">Clients</a>
+                <a href="#" class="nav__link">Contact</a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<!-- INTRO -->
+
+<section class="intro">
+    <div class="main__container">
+        <div class="intro__inner">
+            <h1 class="intro__inner__title">Welcome to startup</h1>
+            <h3 class="intro__inner__subtitle">
+                Your Favourite Creative Agancey Template
+            </h3>
+            <button class="btn btn-intro">get started</button>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services">
+    <div class="main__container">
+        <div class="services__header">
+            <h1 class="services__header__title">SERVICES</h1>
+            <img class="line" src="images/line.png" alt="">
+            <h2 class="services__header__subtitle">
+                We offer ipsum dolor sit amet, consetetur sadipscing elitr amet
+            </h2>
+        </div>
+
+        <div class="services__inner">
+
+            <div class="services__inner__item">
+
+                <div class="services__inner__item__icon orange">
+                    <img src="images/Services/services-1.png" alt="">
+                </div>
+
+                <h1 class="services__inner__item__title">
+                    clean typography
+                </h1>
+
+                <div class="services__inner__item__text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo
+                    inventore harum ex magni, dicta impedit. Lorem ipsum.
+                </div>
+
+            </div>
+
+            <div class="services__inner__item">
+
+                <div class="services__inner__item__icon">
+                    <img src="images/Services/services-2.png" alt="">
+                </div>
+
+                <h1 class="services__inner__item__title">
+                    rock solid code
+                </h1>
+
+                <div class="services__inner__item__text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo
+                    inventore harum ex magni, dicta impedit. Lorem ipsum.
+                </div>
+
+            </div>
+
+            <div class="services__inner__item">
+
+                <div class="services__inner__item__icon">
+                    <img src="images/Services/services-3.png" alt="">
+                </div>
+
+                <h1 class="services__inner__item__title">
+                    expert support
+                </h1>
+
+                <div class="services__inner__item__text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo
+                    inventore harum ex magni, dicta impedit. Lorem ipsum.
+                </div>
+
+            </div>
+
+        </div> <!-- /services__inner -->
+    </div> <!-- /main__container -->
+</section>
+
+<!-- ABOUT US -->
+
+<section class="aboutUs">
+    <div class="main__container">
+        <div class="aboutUs__header">
+            <h1 class="aboutUs__header__title">
+                About us
+            </h1>
+
+            <img class="line" src="images/line.png" alt="">
+
+            <h2 class="aboutUs__header__subtitle">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr amet
+            </h2>
+        </div>
+        <div class="aboutUs__inner">
+
+            <div class="aboutUs__inner__text">
+                <div class="aboutUs__inner__text__item">Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                    sediam nonumy eirmod tempor invidunt ut labore et dolore aliquyam erat, sed diam voluptua. At
+                    vero eos et accusam et justo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                    sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor et dolore aliquyam erat. Lorem ipsum
+                    dolor sit amet. Lorem ipsum eat.
+                </div>
+                <div class="aboutUs__inner__text__item">Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                    sediam nonumy eirmod tempor invidunt ut labore et dolore aliquyam erat, sed diam voluptua. At
+                    vero eos et accusam et justo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                    sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor et dolore aliquyam erat. Lorem ipsum
+                    dolor sit amet. Lorem ipsum eat.
+                </div>
+            </div>
+
+            <div class="team">
+                <div class="team__inner">
+                    <div class="team__inner__item">
+
+                        <div class="team__inner__item__photo">
+                            <img src="images/Members/member-1.png" alt="">
+                            <div class="bg"></div>
+                        </div>
+                        <div class="team__inner__item__name">
+                            Md. Khalil Uddin
+                        </div>
+                        <div class="team__inner__item__position">
+                            Head of Ideas
+                        </div>
+
+                    </div>
+
+                    <div class="team__inner__item">
+                        <div class="team__inner__item__photo">
+                            <img src="images/Members/member-2.png" alt="">
+                            <div class="bg"></div>
+                        </div>
+
+                        <div class="team__inner__item__name">
+                            Rubel Miah
+                        </div>
+                        <div class="team__inner__item__position">
+                            Lead WordPress Developer
+                        </div>
+
+                    </div>
+
+                    <div class="team__inner__item">
+                        <div class="team__inner__item__photo">
+                            <img src="images/Members/member-3.png" alt="">
+                            <div class="bg"></div>
+                        </div>
+                        <div class="team__inner__item__name">
+                            Shamim Mia
+                        </div>
+                        <div class="team__inner__item__position">
+                            Sr. Web Developer
+                        </div>
+
+                    </div>
+
+                    <div class="team__inner__item">
+                        <div class="team__inner__item__photo">
+                            <img src="images/Members/member-4.png" alt="">
+                            <div class="bg"></div>
+                        </div>
+                        <div class="team__inner__item__name">
+                            John Doe
+                        </div>
+                        <div class="team__inner__item__position">
+                            Front-end Developer
+                        </div>
+
+                    </div>
+
+                </div> <!-- /team__inner -->
+            </div> <!-- /team -->
+        </div> <!-- /aboutUs__inner -->
+    </div> <!-- /main__container -->
+</section>
+
+<!-- LATEST WORKS -->
+<section class="latestWorks">
+    <div class="main__container">
+        <div class="latestWorks__header">
+            <h1 class="latestWorks__header__title">Latest</h1>
+            <img src="images/line.png" alt="" class="line">
+            <nav class="nav latestWorks__header__nav">
+                <a href="#" class="nav__link latestWorks__nav">All</a>
+                <a href="#" class="nav__link latestWorks__nav">Branding</a>
+                <a href="#" class="nav__link latestWorks__nav">Design</a>
+                <a href="#" class="nav__link latestWorks__nav">Development</a>
+                <a href="#" class="nav__link latestWorks__nav">Strategy</a>
+            </nav>
+        </div>
+
+        <div class="latestWorks__inner">
+
+            <div class="latestWorks__inner__item">
+                <img src="images/Works/Work-1.png" alt="">
+                <div class="item__content">
+                    <h1 class="item__content__title">Hair Dresser</h1>
+                    <h3 class="item__content__subtitle">Branding</h3>
+                    <div>
+                        <button class="btn">view</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="latestWorks__inner__item">
+                <img src="images/Works/Work-2.png" alt="">
+                <div class="item__content">
+                    <h1 class="item__content__title">Hair Dresser</h1>
+                    <h3 class="item__content__subtitle">Branding</h3>
+                    <div>
+                        <button class="btn">view</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="latestWorks__inner__item">
+                <img src="images/Works/Work-3.png" alt="">
+                <div class="item__content">
+                    <h1 class="item__content__title">Hair Dresser</h1>
+                    <h3 class="item__content__subtitle">Branding</h3>
+                    <div>
+                        <button class="btn">view</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="latestWorks__inner__item">
+                <img src="images/Works/Work-4.png" alt="">
+                <div class="item__content">
+                    <h1 class="item__content__title">Hair Dresser</h1>
+                    <h3 class="item__content__subtitle">Branding</h3>
+                    <div>
+                        <button class="btn">view</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="latestWorks__inner__item">
+                <img src="images/Works/Work-5.png" alt="">
+                <div class="item__content">
+                    <h1 class="item__content__title">Hair Dresser</h1>
+                    <h3 class="item__content__subtitle">Branding</h3>
+                    <div>
+                        <button class="btn">view</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="latestWorks__inner__item">
+                <img src="images/Works/Work-6.png" alt="">
+                <div class="item__content">
+                    <h1 class="item__content__title">Hair Dresser</h1>
+                    <h3 class="item__content__subtitle">Branding</h3>
+                    <div>
+                        <button class="btn">view</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="latestWorks__inner__item">
+                <img src="images/Works/Work-7.png" alt="">
+                <div class="item__content">
+                    <h1 class="item__content__title">Hair Dresser</h1>
+                    <h3 class="item__content__subtitle">Branding</h3>
+                    <div>
+                        <button class="btn">view</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="latestWorks__inner__item">
+                <img src="images/Works/Work-8.png" alt="">
+                <div class="item__content">
+                    <h1 class="item__content__title">Hair Dresser</h1>
+                    <h3 class="item__content__subtitle">Branding</h3>
+                    <div>
+                        <button class="btn">view</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="latestWorks__inner__item">
+                <img src="images/Works/Work-9.png" alt="">
+                <div class="item__content">
+                    <h1 class="item__content__title">Hair Dresser</h1>
+                    <h3 class="item__content__subtitle">Branding</h3>
+                    <div>
+                        <button class="btn btn-works">view</button>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- /latestWorks__inner -->
+    </div> <!-- /main__container -->
+</section>
+
+<!-- YOUR PROJECT -->
+
+<section class="yourProject">
+    <div class="main__container">
+        <div class="yourProject__inner">
+            <div class="yourProject__inner__text">
+                Do you like OUR WORK so far?
+                Let's talk about YOUR PROJECT!
+            </div>
+            <button class="btn"> get in touch</button>
+        </div>
+    </div>
+</section>
+
+<!-- BLOG POSTS -->
+
+<section class="blogPosts">
+    <div class="main__container">
+        <div class="blogPosts__header">
+            <h1 class="blogPosts__header__title">Recent blog posts</h1>
+            <img src="images/line.png" alt="" class="line">
+            <h2 class="blogPosts__header__subtitle">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr amet
+            </h2>
+        </div>
+        <div class="blogPosts__inner">
+            <div class="blogPosts__inner__item">
+                <div class="blogPosts__inner__item__photo">
+                    <img src="images/Blog/BlogPost-1.jpg" alt="">
+                </div>
+
+                <div class="blogPosts__inner__item__content">
+
+                    <div class="blogPosts__inner__item__content__header">
+                        <div class="blogPosts__inner__item__content__header__date">
+                            <div class="date__text">
+                                <span class="date__text__date">18</span>
+                                <span class="date__text__number">oct</span>
+                            </div>
+                        </div>
+
+                        <h1 class="blogPosts__inner__item__content__header__title">
+                            <div class="title">Startup ideas needs to be funded</div>
+                            <div class="subtitle">
+                                By <span class="subtitle__mod">Khalil</span> Uddin in
+                                <span class="subtitle__mod">Development</span>
+                            </div>
+                        </h1>
+                    </div>
+
+                    <div class="blogPosts__inner__item__content__text">
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod teduntlabore et
+                        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
+                        erebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit am Lorem
+                        ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidulabore et
+                        dolore aliquyam erat, sed diam
+                    </div>
+
+                    <div class="readMore">read more</div>
+
+                </div>
+
+            </div>
+
+            <div class="blogPosts__inner__item">
+                <div class="blogPosts__inner__item__photo">
+                    <img src="images/Blog/BlogPost-2.jpg" alt="">
+                </div>
+
+                <div class="blogPosts__inner__item__content">
+
+                    <div class="blogPosts__inner__item__content__header">
+                        <div class="blogPosts__inner__item__content__header__date">
+                            <div class="date__text">
+                                <span class="date__text__date">18</span>
+                                <span class="date__text__number">oct</span>
+                            </div>
+                        </div>
+
+                        <h1 class="blogPosts__inner__item__content__header__title">
+                            <div class="title">User Interface Designing Elements</div>
+                            <div class="subtitle">
+                                By <span class="subtitle__mod">Khalil</span> Uddin in
+                                <span class="subtitle__mod">Development</span>
+                            </div>
+                        </h1>
+                    </div>
+
+                    <div class="blogPosts__inner__item__content__text">
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod teduntlabore et
+                        dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et
+                        erebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
+                        ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor idunt ut labore
+                        et dolore aliquyam
+                    </div>
+
+                    <div class="readMore">read more</div>
+
+                </div>
+
+            </div>
+
+        </div> <!-- /blogPosts__inner -->
+    </div> <!-- /main__container -->
+</section>
+
+<!-- CLIENTS -->
+
+<section class="clients">
+    <div class="main__container">
+        <div class="clients__header">
+            <img src="images/Clients/clientIcon-1.png" alt="">
+            <img src="images/Clients/clientIcon-2.png" alt="">
+            <img src="images/Clients/clientIcon-3.png" alt="">
+            <img src="images/Clients/clientIcon-4.png" alt="">
+            <img src="images/Clients/clientIcon-5.png" alt="">
+        </div>
+
+        <div class="clients__inner">
+            <div class="clients__inner__item">
+                <div class="clients__inner__item__text">
+                    Hvaing placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus
+                    autem quibusdam et aut officiis debitis aut rerum”
+                </div>
+
+                <div class="clients__inner__item__footer">
+                    John Doe, Google Inc.
+                </div>
+            </div>
+        </div> <!-- /clients__inner -->
+    </div> <!-- /main__container -->
+</section>
+
+<!-- CONTACTS -->
+
+<section class="contacts">
+    <div class="main__container">
+        <div class="contacts__header">
+            <h1 class="contacts__header__title">get in touch</h1>
+            <img class="line" src="images/line.png" alt="">
+            <h2 class="contacts__header__subtitle">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr amet
+            </h2>
+        </div>
+
+        <div class="contacts__inner">
+            <div class="contacts__inner__bar">
+
+                <div class="contacts__inner__bar__item">
+                    <div>
+                        <img src="images/Contacts/contactsIcon-1.png" alt="" class="bar__icon">
+                    </div>
+                    <div class="bar__content">
+                        <h1 class="bar__content__title">address</h1>
+                        <div class="bar__content__text">312, 7th Ave, New York
+                            NY 101200, United States of America
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contacts__inner__bar__item">
+                    <div>
+                        <img src="images/Contacts/contactsIcon-2.png" alt="" class="bar__icon">
+                    </div>
+                    <div class="bar__content">
+                        <h1 class="bar__content__title">Hotline (24x7)</h1>
+                        <div class="bar__content__text">+65 0052 300, +65 88251 210
+                            +88 01723 511 340
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contacts__inner__bar__item">
+                    <div>
+                        <img src="images/Contacts/contactsIcon-3.png" alt="" class="bar__icon">
+                    </div>
+                    <div class="bar__content">
+                        <h1 class="bar__content__title">E-mail</h1>
+                        <div class="bar__content__text">shapedtheme@gmail.com
+                            khalilkode@gmail.com
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <form class="contacts__inner__form">
+                <input type="text" placeholder="YOUR NAME" name="yourName" class="contacts__form">
+                <input type="text" placeholder="YOUR EMAIL" name="yourEmail" class="contacts__form">
+                <input type="text" placeholder="YOUR SUBJECT" name="yourSubject" class="contacts__form">
+                <input type="text" placeholder="COMPANY NAME" name="companyName" class="contacts__form">
+                <textarea name="yourMessage" placeholder="WRITE YOUR MESSAGE" class=" textarea"></textarea>
+                <div class="contacts__button">
+                    <input type="submit" value="send message" class="btn btn-contacts">
+                    <div class="contacts__button__text">
+                        <span class="contacts__button__text-mod">*</span>We’ll contact you as as possible. We don’t
+                        reply on Monday.
+                    </div>
+                </div>
+            </form>
+        </div> <!-- /contact__inner -->
+    </div> <!-- /main__container -->
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+    <div class="main__container">
+        <div class="footer__inner">
+            <div class="footer__inner__socials">
+                    <a href="https://facebook.com" target="_blank">
+                        <svg class="social__icon">
+                            <use xlink:href="#facebook"></use>
+                        </svg>
+                    </a>
+
+                    <a href="http://twitter.com" target="_blank">
+                        <svg class="social__icon">
+                            <use xlink:href="#twitter"></use>
+                        </svg>
+                    </a>
+
+                    <a href="http://www.googleplus.com" target="_blank">
+                        <svg class="social__icon">
+                            <use xlink:href="#googlePlus"></use>
+                        </svg>
+                    </a>
+
+                    <a href="https://www.linkedin.com/login" target="_blank">
+                        <svg class="social__icon">
+                            <use xlink:href="#linkedin"></use>
+                        </svg>
+                    </a>
+            </div>
+            <img class="line" src="images/line-white.png" alt="">
+            <div class="footer__inner__text">
+                © 2015 Startup, Made by GIORGI GVISHIANI
+            </div>
+        </div> <!-- /footer__inner -->
+    </div> <!-- /main__container -->
+</footer>
+
+</body>
+
+</html>
